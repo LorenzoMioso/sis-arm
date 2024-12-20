@@ -1,4 +1,4 @@
-FROM amd64/ubuntu:20.04
+FROM ubuntu:20.04
 
 ENV TZ=Europe/Rome
 ENV DEBIAN_FRONTEND=noninteractive

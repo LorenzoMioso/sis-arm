@@ -7,7 +7,7 @@ function container_exists() {
 if [ "$(basename "$PWD")" != "SIS" ]; then
     echo "Assicurati di essere nella cartella 'SIS' per eseguire lo script. Ovvero la cartella che conterrà i file BLIF e il file .bsis_history"
 else
-    docker build -t sis-arm ..
+    docker build --platform linux/x86_64 -t sis-arm ..
     if [ "$(container_exists)" != "false" ]; then
         docker run -it --name sis-arm -v "$PWD/.:/home/dockeruser/SIS" -v "$PWD/.bsis_history:/home/dockeruser/.bsis_history" sis-arm /bin/bash
     else
